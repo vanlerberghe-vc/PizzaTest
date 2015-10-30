@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </head>
+    <body id="registratie">
+        <div class="wrapper">
+            {%if errorKlantBestaat%}
+                <div class="error">
+                    <p>
+                        Dit emailadres komt al voor in onze database.
+                    </p>
+                </div>
+            {%endif%}
+            {%if errorPostcode%}
+                <div class="error">
+                    <p>
+                        Om onze pizza's warm bij onze klanten aan te kunnen laten komen leveren wij enkel
+                        in onze rondomliggende gemeentes (Malle, Zoersel en Brecht). Onze excuses
+                        voor het ongemak.
+                    </p>
+                </div>
+            {%endif%}
+            <p>De volgende gegevens zijn nodig voor de levering:</p>
+            <form method="POST" action="registrerenController.php?action=registreren">
+                <label for="txtNaam">Naam:</label>
+                <input type="text" name="txtNaam" value="{{naam}}"/>
+                <label for="txtVoornaam">Voornaam:</label>
+                <input type="text" name="txtVoornaam" value="{{voornaam}}"/>
+                <label for="txtStraat">Straat:</label>
+                <input type="text" name="txtStraat" value="{{straat}}"/>                
+                <label for="txtHuisnummer">Huisnummer:</label>
+                <input type="number" name="txtHuisnummer" value="{{huisnummer}}"/>
+                <label for="txtGemeente">Gemeente:</label>
+                <input type="text" name="txtGemeente" value="{{gemeente}}"/>
+                <label for="txtPostcode">Postcode:</label>
+                <input type="number" name="txtPostcode" value="{{postcode}}"/>
+                <label for="txtTelefoon">Telefoon:</label>
+                <input type="text" name="txtTelefoon" value="{{telefoon}}"/>
+
+                <hr>
+                <label for="checkRegistratie">Indien u zich graag in met deze gegevens wilt registreren
+                    kan u deze checkbox aanvinken en uw email en wachtwoord hieronder ingeven:
+                </label>
+                <input type="checkbox" name="checkRegistratie"/><br>
+                <label for="txtEmail">Email:</label>
+                <input type="email" name="txtEmail" />
+                <label for="txtWachtwoord">Wachtwoord</label>
+                <input type="password" name="txtWachtwoord"/>
+
+                <input type="submit" value="Afrekenen" />
+            </form>
+            <div class="links">
+                <ul>
+                    <li><a href="aanmeldenController.php">Ik heb al een account</a></li>
+                    <li><a href="aanbodController.php">Terug naar aanbod</a></li>
+                </ul>            
+            </div>
+        </div>
+    </body>
+</html>

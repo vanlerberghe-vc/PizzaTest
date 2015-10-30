@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </head>
+    <body id="registratie">
+        <div class="wrapper">
+            {%if errorPostcode%}
+                <div class="error">
+                    <p>
+                        Om onze pizza's warm bij onze klanten aan te kunnen laten komen leveren wij enkel
+                        in onze rondomliggende gemeentes (Malle, Zoersel en Brecht). Onze excuses
+                        voor het ongemak.
+                    </p>
+                </div>
+            {%endif%}
+            <form method="POST" action="wijzigGegevensController.php?action=bevestigWijzig">
+                <label for="txtNaam">Naam:</label>
+                <input type="text" name="txtNaam" value="{{naam}}"/>
+                <label for="txtVoornaam">Voornaam:</label>
+                <input type="text" name="txtVoornaam" value="{{voornaam}}"/>
+                <label for="txtStraat">Straat:</label>
+                <input type="text" name="txtStraat" value="{{straat}}"/>                
+                <label for="txtHuisnummer">Huisnummer:</label>
+                <input type="number" name="txtHuisnummer" value="{{huisnummer}}"/>
+                <label for="txtGemeente">Gemeente:</label>
+                <input type="text" name="txtGemeente" value="{{gemeente}}"/>
+                <label for="txtPostcode">Postcode:</label>
+                <input type="number" name="txtPostcode" value="{{postcode}}"/>
+                <label for="txtTelefoon">Telefoon:</label>
+                <input type="text" name="txtTelefoon" value="{{telefoon}}"/>
+                <input type="submit" value="wijzig" />
+            </form>
+        </div>
+    </body>
+</html>

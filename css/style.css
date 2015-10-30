@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-okt-2015, 13:34:59
+    Author     : vincent.vanlerberghe
+*/
+
+
+body{
+    background-color: #FFE4E1;
+}
+.wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+.content{
+        
+}
+.col{
+    float: right;
+}
+
+.pizzaOptie .pizzaNaam{
+    
+}
+.pizzaOptie .pizzaNaam p a{
+    text-decoration: none;
+    color: #cc6633;
+}
+
+#winkelmandje{
+    background-color: #D3D3D3;
+    padding: 1em;
+    border-radius: 7px;
+}
+#winkelmandje h3{
+    color: #BC8F8F;
+}
+#winkelmandje #afrekenen{
+    padding: 0.5em;
+    background-color: blue;
+    color: red;
+    text-align: center;
+}
+#winkelmandje #afrekenen:hover{
+    background-color: white;
+}
+#winkelmandje #afrekenen a{
+    text-decoration: none;
+    padding: 1em, 4em, 1em, 4em;
+    
+}
+.bold{
+    font-weight: bold;
+}
+
+.accountLinks{
+    margin-bottom: 5em;
+}
+.accountLinks ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 1em;
+        
+}
+.accountLinks ul li a{
+    text-decoration: none;
+    padding: 2em;
+    background-color: grey;
+    border-radius: 5px;
+}
+.accountLinks ul li a:hover{
+    background-color: white;
+}
+
+.verwijderImg{
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+
+#registratie form{
+    float: left;
+    width: 200px;
+    margin-right: 500px;
+}
+
+.error{
+    color: red;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <h3>Overzicht van uw bestelling:</h3>
+            <div class="bestelling">
+                {%for item in winkelmandje%}
+                    <div class="bestellingItem">
+                        <p><span class="bold">{{item.Naam}}</span> {{item.Samenstelling}} {{item.Prijs}}&euro;</p>
+                    </div>
+                {%endfor%}
+                <h4>Totaalprijs:</h4>
+                {{totaalprijs}}&euro;
+            </div>
+
+            <div class="gegevensLevering">
+                <p>Naam: <span class="bold">{{naam}}</span></p>
+                <p>Voornaam: <span class="bold">{{voornaam}}</span></p>
+                <p>Straat: <span class="bold">{{straat}}</span></p>
+                <p>Huisnummer: <span class="bold">{{huisnummer}}</span></p>
+                <p>Gemeente: <span class="bold">{{gemeente}}</span></p>
+                <p>Postcode: <span class="bold">{{postcode}}</span></p>                
+                <p>Telefoonnummer: <span class="bold">{{telefoon}}</span></p>
+            </div>
+            
+            
+            
+            <div class="wijzigGegevens">
+                <ul>
+                    <li><a href="aanbodController.php?action=wijzig">Wijzig bestelling</a></li>
+                    <li><a href="wijzigGegevensController.php?action=wijzig">Wijzig leveringsgegevens</a></li>
+                </ul>
+            </div>
+            
+            <div class="bestel">
+                <p>Voeg eventueel een opmerking voor onze koerier toe en bestel!:</p>
+                <form method="POST" action="afrekenenController.php?action=bestel">
+                    <textarea name="koerierinfo">
+                    </textarea>
+                    <input type="submit" value="Bestel!" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

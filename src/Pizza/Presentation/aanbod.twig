@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Aanbod</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>        
+        <div class="wrapper">
+            <div class="content col">
+                
+                    <div id="winkelmandje">
+                        <h3>Uw voorlopige keuze(s):</h3>
+                        {%for keuze in winkelmandje%}
+                            <div class="itemWinkelmandje">
+                                <p>{{keuze.Naam}}:{{keuze.Prijs}}&euro;<a href="aanbodController.php?action=verwijderItem&item={{keuze.pizzaId}}"><img class="verwijderImg" src="img/delete-icon-md.png"/></a></p>
+                            </div>
+                        {%endfor%}
+                        Totaalprijs: {{totaalprijs}}&euro;
+                        <div id="afrekenen">
+                            
+                            <a href="aanbodController.php?action=afrekenen">Afrekenen</a>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="content col">
+                {%for pizza in pizzaLijst%}
+                    <div class="pizzaOptie">
+                        <div class="pizzaNaam">
+                            <p><a href="aanbodController.php?keuze={{pizza.pizzaId}}">{{pizza.Naam}}</a></p>
+                        </div>
+                        <div class="pizzaInfo">
+                            <p>{{pizza.Samenstelling}} &nbsp; {{pizza.Prijs}}&euro; &nbsp;
+                                {%if pizza.Beschikbaarheid == 1%}
+                                    Beschikbaar &nbsp;
+                                {%else%}
+                                    Momenteel niet beschikbaar &nbsp;    
+                                {%endif%}
+                            </p>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+    </body>
+</html>
